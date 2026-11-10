@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acid Vault Studios</title>
+  
+  <!-- Using your established Bebas Neue font -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <style>
+    /* Pure black background, no scrolling allowed on the splash page */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000000;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-family: 'Bebas Neue', sans-serif;
+    }
+
+    /* The interactive zone that triggers the hover */
+    .splash-wrapper {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* The Logo */
+    .center-logo {
+      width: auto;
+      max-width: 300px; /* Adjust based on your preferred scale */
+      z-index: 10;
+      filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.15)); /* Optional subtle eerie glow */
+    }
+
+    /* Base styling for all links */
+    .splash-link {
+      position: absolute;
+      color: #c0c0c0; /* MW Silver */
+      text-decoration: none;
+      font-size: 2rem;
+      letter-spacing: 4px;
+      opacity: 0; /* Hidden by default */
+      transition: opacity 0.8s ease-in-out, color 0.3s ease;
+      z-index: 5;
+    }
+
+    .splash-link:hover {
+      color: #a81c1c; /* MW Red */
+    }
+
+    /* Positioning the links around the logo */
+    .link-top { top: 15%; }
+    .link-bottom { bottom: 15%; }
+    .link-left { left: 10%; }
+    .link-right { right: 10%; }
+
+    /* DESKTOP HOVER EFFECT: Revealing links when the mouse enters the wrapper */
+    .splash-wrapper:hover .splash-link {
+      opacity: 1;
+    }
+
+    /* MOBILE FALLBACK: Auto-reveal links on touchscreens */
+    @media (hover: none) {
+      .splash-link {
+        animation: mobileFadeIn 2s ease-in forwards;
+        animation-delay: 1s; /* Waits 1 second after loading, then fades in */
+      }
+      
+      /* Bring links closer to the logo on tight phone screens */
+      .link-top { top: 10%; }
+      .link-bottom { bottom: 10%; }
+      .link-left { left: auto; top: 25%; }
+      .link-right { right: auto; bottom: 25%; }
+    }
+
+    @keyframes mobileFadeIn {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- The interactive splash zone -->
+  <div class="splash-wrapper">
+    
+    <!-- The links orbiting the center -->
+    <a href="lore.html" class="splash-link link-top">LORE</a>
+    <a href="map.html" class="splash-link link-left">MAP</a>
+    <a href="stories.html" class="splash-link link-right">STORIES</a>
+    <a href="about.html" class="splash-link link-bottom">ENTER THE VAULT</a>
+    
+    <!-- Your Acid Vault Logo -->
+    <img src="2402.png" alt="Acid Vault Studios Logo" class="center-logo">
+    
+  </div>
+
+</body>
+</html>
