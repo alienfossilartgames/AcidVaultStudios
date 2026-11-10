@@ -3,102 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Acid Vault Studios</title>
+  <title>Transmissions Arriving Soon - Meatworld</title>
   
-  <!-- Using your established Bebas Neue font -->
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-
+  <!-- Link to your shared styles.css file -->
+  <link rel="stylesheet" href="/assets/styles.css">
+  
+  <!-- Inline styles specifically for this splash page -->
   <style>
-    /* Pure black background, no scrolling allowed on the splash page */
+    /* Strict override for pure black background */
     body {
+      background-color: #000000 !important;
+      background-image: none !important; /* Forces the background image to disappear */
       margin: 0;
       padding: 0;
-      background-color: #000000;
-      height: 100vh;
+      overflow: hidden; /* Prevents scrollbars */
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
-      overflow: hidden;
-      font-family: 'Bebas Neue', sans-serif;
+      align-items: center;
+      height: 100vh;
+      color: var(--mw-red); /* Pulls the red variable from your styles.css */
     }
 
-    /* The interactive zone that triggers the hover */
-    .splash-wrapper {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
+    /* Container to tightly wrap the centered content */
+    .center-wrapper {
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 100vw;
+      padding: 1rem;
     }
 
-    /* The Logo */
-    .center-logo {
+    /* Top Text Graphic */
+    .top-text-img {
+      max-width: 80vw; /* Prevents it from touching the edges of a phone screen */
+      height: auto;
+      margin-bottom: 2rem;
+    }
+
+    /* The Video */
+    .center-video {
+      max-width: 100%; /* Will scale down on mobile */
       width: auto;
-      max-width: 300px; /* Adjust based on your preferred scale */
-      z-index: 10;
-      filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.15)); /* Optional subtle eerie glow */
+      height: auto; /* Maintains aspect ratio */
+      margin-bottom: 2rem;
     }
 
-    /* Base styling for all links */
-    .splash-link {
-      position: absolute;
-      color: #c0c0c0; /* MW Silver */
-      text-decoration: none;
-      font-size: 2rem;
-      letter-spacing: 4px;
-      opacity: 0; /* Hidden by default */
-      transition: opacity 0.8s ease-in-out, color 0.3s ease;
-      z-index: 5;
-    }
-
-    .splash-link:hover {
-      color: #a81c1c; /* MW Red */
-    }
-
-    /* Positioning the links around the logo */
-    .link-top { top: 15%; }
-    .link-bottom { bottom: 15%; }
-    .link-left { left: 10%; }
-    .link-right { right: 10%; }
-
-    /* DESKTOP HOVER EFFECT: Revealing links when the mouse enters the wrapper */
-    .splash-wrapper:hover .splash-link {
-      opacity: 1;
-    }
-
-    /* MOBILE FALLBACK: Auto-reveal links on touchscreens */
-    @media (hover: none) {
-      .splash-link {
-        animation: mobileFadeIn 2s ease-in forwards;
-        animation-delay: 1s; /* Waits 1 second after loading, then fades in */
-      }
-      
-      /* Bring links closer to the logo on tight phone screens */
-      .link-top { top: 10%; }
-      .link-bottom { bottom: 10%; }
-      .link-left { left: auto; top: 25%; }
-      .link-right { right: auto; bottom: 25%; }
-    }
-
-    @keyframes mobileFadeIn {
-      to { opacity: 1; }
+    /* Bottom Text */
+    .bottom-header {
+      font-family: 'Black Ops One', 'Bebas Neue', sans-serif; /* Uses your custom fonts */
+      font-size: clamp(2rem, 5vw, 4rem); /* Responsive sizing so it shrinks on phones */
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-align: center;
+      margin: 0;
+      text-shadow: 2px 2px 0px var(--mw-purple); /* Adds the faint purple glow from your theme */
     }
   </style>
 </head>
 <body>
 
-  <!-- The interactive splash zone -->
-  <div class="splash-wrapper">
+  <!-- Centers everything horizontally and vertically -->
+  <div class="center-wrapper">
     
-    <!-- The links orbiting the center -->
-    <a href="lore.html" class="splash-link link-top">LORE</a>
-    <a href="map.html" class="splash-link link-left">MAP</a>
-    <a href="stories.html" class="splash-link link-right">STORIES</a>
-    <a href="about.html" class="splash-link link-bottom">ENTER THE VAULT</a>
+    <!-- Top Image Graphic -->
+    <img src="/assets/AVS_Text1.png" alt="Acid Vault Studios" class="top-text-img">
     
-    <!-- Your Acid Vault Logo -->
-    <img src="2402.png" alt="Acid Vault Studios Logo" class="center-logo">
+    <!-- Centered WebM Video -->
+    <video autoplay loop muted playsinline class="center-video">
+      <source src="/assets/AVS_IndexAnim1.webm" type="video/webm">
+    </video>
+    
+    <!-- Bottom Header Text -->
+    <h1 class="bottom-header">Transmissions Arriving Soon!</h1>
     
   </div>
 
