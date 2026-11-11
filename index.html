@@ -33,12 +33,19 @@
       width: 100%;
       height: auto;
       margin-bottom: 25px; /* Adds a nice gap between the image, video, and text */
-      border: 5px solid #00ff88; /* Adds a bright 5px green border */
+    }
+
+     /* 3. Forces the image and video to fit perfectly inside the 75% wrapper */
+    .vid-media {
+      width: 100%;
+      height: auto;
+      margin-bottom: 25px; /* Adds a nice gap between the image, video, and text */
+      border: 2px solid #00ff88; /* Adds a bright 5px green border */
     }
 
     /* 4. Simple, easy-to-change text styling */
     .splash-text {
-      color: #a81c1c; /* Acid Vault Red */
+      color: #7900C7; /* Acid Vault Red */
       font-size: 3rem;
       margin: 0;
       text-transform: uppercase;
@@ -65,7 +72,7 @@
     <img src="/assets/AVS_Text1.png" alt="Acid Vault Studios" class="splash-media">
     
     <!-- Centered Video -->
-    <video autoplay loop muted playsinline class="splash-media">
+    <video autoplay loop muted playsinline class="vid-media">
       <source src="/assets/AVS_IndexAnim1.webm" type="video/webm">
     </video>
     
