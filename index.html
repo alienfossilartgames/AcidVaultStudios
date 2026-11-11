@@ -30,14 +30,18 @@
 
     /* 3. Forces the image and video to fit perfectly inside the 75% wrapper */
     .splash-media {
-      width: 100%;
-      height: auto;
+      max-width: 1000px;
+      max-height: 100%;
+      width: 75vw;
+      height: auto; 
       margin-bottom: 25px; /* Adds a nice gap between the image, video, and text */
     }
 
      /* 3. Forces the image and video to fit perfectly inside the 75% wrapper */
     .vid-media {
-      width: 100%;
+      max-width: 100vw;
+      max-height: 60vh; 
+      width: auto;
       height: auto;
       margin-bottom: 25px; /* Adds a nice gap between the image, video, and text */
       border: 2px solid #00ff88; /* Adds a bright 5px green border */
